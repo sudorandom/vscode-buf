@@ -33,6 +33,7 @@ let serverOutputChannel: vscode.OutputChannel | undefined;
 const bufDocumentSelector = [
   { scheme: "file", language: "proto" },
   { scheme: "file", language: "buf-config" },
+  { scheme: "file", language: "protoscope" },
 ];
 
 /**

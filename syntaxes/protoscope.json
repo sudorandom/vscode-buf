@@ -1,0 +1,39 @@
+{
+  "scopeName": "source.protoscope",
+  "fileTypes": ["protoscope"],
+  "patterns": [
+    {
+      "name": "comment.line.number-sign.protoscope",
+      "begin": "#",
+      "end": "$"
+    },
+    {
+      "name": "string.quoted.other.hex.protoscope",
+      "begin": "`",
+      "end": "`"
+    },
+    {
+      "name": "string.quoted.double.protoscope",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.protoscope",
+          "match": "\\\\."
+        }
+      ]
+    },
+    {
+      "name": "entity.name.tag.field.protoscope",
+      "match": "\\b([0-9]+)\\b\\s*:"
+    },
+    {
+      "name": "keyword.other.wiretype.protoscope",
+      "match": ":\\s*\\b(i32|i64|f32|f64|z32|z64|s32|s64|a|v)\\b"
+    },
+    {
+      "name": "constant.numeric.protoscope",
+      "match": "\\b[0-9]+[a-zA-Z0-9_]*\\b"
+    }
+  ]
+}

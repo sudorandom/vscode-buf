@@ -39,6 +39,7 @@
   ],
   "activationEvents": [
     "workspaceContains:**/*.proto",
+    "workspaceContains:**/*.protoscope",
     "workspaceContains:**/buf.yaml",
     "workspaceContains:**/buf.lock",
     "workspaceContains:**/buf.mod",
@@ -114,6 +115,12 @@
         "category": "Buf",
         "icon": "$(debug-stop)",
         "title": "Stop Buf Language Server"
+      },
+      {
+        "command": "buf.protoscope.disassemble",
+        "category": "Buf",
+        "title": "Disassemble Binary to Protoscope",
+        "description": "Disassemble a Protocol Buffers binary file into Protoscope format"
       }
     ],
     "configuration": {
@@ -145,6 +152,11 @@
         "language": "buf-config",
         "scopeName": "source.buf-config",
         "path": "./syntaxes/buf-config.json"
+      },
+      {
+        "language": "protoscope",
+        "scopeName": "source.protoscope",
+        "path": "./syntaxes/protoscope.json"
       }
     ],
     "jsonValidation": [
@@ -185,6 +197,16 @@
           "light": "./icons/_proto_file_light_mode.svg",
           "dark": "./icons/_proto_file_dark_mode.svg"
         }
+      },
+      {
+        "id": "protoscope",
+        "extensions": [
+          ".protoscope"
+        ],
+        "aliases": [
+          "Protoscope"
+        ],
+        "configuration": "./protoscope-language-configuration.json"
       }
     ],
     "yamlValidation": [
@@ -196,7 +218,16 @@
         "fileMatch": "buf.plugin.yaml",
         "url": "https://www.schemastore.org/buf.plugin.json"
       }
-    ]
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "buf.protoscope.disassemble",
+          "when": "resourceExtname == .bin || resourceExtname == .pb || resourceExtname == .binpb || resourceExtname == .wire",
+          "group": "buf"
+        }
+      ]
+    }
   },
   "main": "./out/src/extension.js",
   "scripts": {
