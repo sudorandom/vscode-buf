@@ -34,6 +34,7 @@ const bufDocumentSelector = [
   { scheme: "file", language: "proto" },
   { scheme: "file", language: "buf-config" },
   { scheme: "file", language: "protoscope" },
+  { scheme: "untitled", language: "protoscope" },
 ];
 
 /**

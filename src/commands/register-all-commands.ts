@@ -7,6 +7,7 @@ import { bufDepPrune } from "./buf-dep-prune";
 import { bufDepUpdate } from "./buf-dep-update";
 import { bufGenerate } from "./buf-generate";
 import type { Command } from "./command";
+import { bufProtoscopeAssemble } from "./protoscope-assemble";
 import { bufProtoscopeDisassemble } from "./protoscope-disassemble";
 import { showCommands } from "./show-commands";
 import { showOutput } from "./show-output";
@@ -31,6 +32,7 @@ const commands = [
   startLanguageServer,
   stopLanguageServer,
   bufProtoscopeDisassemble,
+  bufProtoscopeAssemble,
 ];
 
 /**

@@ -11,11 +11,21 @@ export const bufProtoscopeDisassemble = new Command(
   async (_, ...args) => {
     let fileUri = args[0] as vscode.Uri | undefined;
     if (!fileUri) {
+      const activeEditor = vscode.window.activeTextEditor;
+      if (activeEditor) {
+        const uri = activeEditor.document.uri;
+        const ext = uri.path.split(".").pop()?.toLowerCase();
+        if (ext && ["bin", "pb", "binpb", "wire"].includes(ext)) {
+          fileUri = uri;
+        }
+      }
+    }
+    if (!fileUri) {
       const uris = await vscode.window.showOpenDialog({
         canSelectMany: false,
         openLabel: "Disassemble",
         filters: {
-          "Protobuf Binaries": ["binpb", "bin", "pb", "wire"],
+          "Protobuf Binaries": ["bin", "pb", "binpb", "wire"],
           "All files": ["*"],
         },
       });

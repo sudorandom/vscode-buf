@@ -121,6 +121,12 @@
         "category": "Buf",
         "title": "Disassemble Binary to Protoscope",
         "description": "Disassemble a Protocol Buffers binary file into Protoscope format"
+      },
+      {
+        "command": "buf.protoscope.assemble",
+        "category": "Buf",
+        "title": "Assemble Protoscope to Binary",
+        "description": "Assemble a Protoscope text file into Protocol Buffers binary format"
       }
     ],
     "configuration": {
@@ -224,6 +230,11 @@
         {
           "command": "buf.protoscope.disassemble",
           "when": "resourceExtname == .bin || resourceExtname == .pb || resourceExtname == .binpb || resourceExtname == .wire",
+          "group": "buf"
+        },
+        {
+          "command": "buf.protoscope.assemble",
+          "when": "resourceExtname == .protoscope",
           "group": "buf"
         }
       ]
