@@ -29,7 +29,7 @@
     },
     {
       "name": "keyword.other.wiretype.protoscope",
-      "match": ":\\s*\\b(i32|i64|f32|f64|z32|z64|s32|s64|a|v)\\b"
+      "match": ":\\s*\\b(i32|i64|f32|f64|z32|z64|s32|s64|a|v|I32|I64|VARINT|LEN|SGROUP|EGROUP)\\b"
     },
     {
       "name": "constant.numeric.protoscope",

@@ -237,6 +237,13 @@
           "when": "resourceExtname == .protoscope",
           "group": "buf"
         }
+      ],
+      "editor/context": [
+        {
+          "command": "buf.protoscope.assemble",
+          "when": "resourceLangId == protoscope",
+          "group": "buf"
+        }
       ]
     }
   },
